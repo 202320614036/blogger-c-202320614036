@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="text-center w-100 fw-bold">Posts</h2>
+    <%= link_to "Yeni Ekle", new_user_post_path(current_user), class: "btn btn-primary position-absolute end-0 me-3" %>
+  </div>
+
+  <% @posts.each do |post| %>
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-8">
+        <div class="card shadow-sm">
+          <div class="card-header fw-semibold"><%= post.title %></div>
+          <div class="card-body">
+            <p><%= truncate(post.article.to_plain_text, length: 400) %></p>
+          </div>
+          <div class="card-footer text-end">
+            <%= link_to "Görüntüle", user_post_path(post.user, post), class: "btn btn-info btn-sm text-white" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

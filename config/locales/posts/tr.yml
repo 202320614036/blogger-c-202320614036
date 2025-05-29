@@ -1,0 +1,6 @@
+tr:
+  posts:
+    edit:
+      title: Post Güncelle
+    new:
+      title: Yeni Post

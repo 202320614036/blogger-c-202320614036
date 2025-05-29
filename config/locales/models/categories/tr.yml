@@ -1,0 +1,10 @@
+tr:
+  activerecord:
+    models:
+      category:
+        one: Kategori
+        other: Kategoriler
+    attributes:
+      category:
+        name: Kategori Adı
+        code: Kategori Kodu

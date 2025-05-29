@@ -1,0 +1,22 @@
+<!--views/admin/users/edit.html.erb -->
+<div class="flex-grow-1">
+  <h3 class="my-4">Kullanıcı Güncelleme</h3>
+  <div class="card">
+    <%= form_for [:admin, @user] do |f| %>
+      <div class="card-body">
+        <div class="mb-3">
+          <%= f.label(:email, class: "form-label required") %>
+          <%= f.email_field(:email, required: true, class: "form-control") %>
+        </div>
+        <div class="mb-3">
+          <%= f.label :role, class: "form-label"  %>
+          <%= f.select(:role, User.roles.keys, {}, { class: "form-select" }) %><br/>
+        </div>
+      </div>
+      <div class="card-footer">
+        <%= f.button(:submit, class: "btn btn-success") %>
+        <%= link_to t("actions.back"), admin_users_path, class: "btn btn-secondary me-1" %>
+      </div>
+    <% end %>
+  </div>
+</div>

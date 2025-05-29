@@ -1,0 +1,29 @@
+<!--views/admin/users/index.html.erb -->
+<div class="flex-grow-1">
+  <h3 class="my-4">Kullanıcılar</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Ad</th>
+        <th scope="col">Soyad</th>
+        <th scope="col">E-posta</th>
+        <th scope="col">Rol</th>
+        <th scope="col">İşlemler</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.firstname %></td>
+          <td><%= user.lastname %></td>
+          <td><%= user.email %></td>
+          <td><%= t("activerecord.enums.user.roles.#{user.role}") %></td>
+          <td>
+            <%= link_to t("actions.show"), admin_user_path(user), class: "btn btn-sm btn-primary" %>
+            <%= link_to t("actions.edit"), edit_admin_user_path(user), class: "btn btn-sm btn-secondary" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

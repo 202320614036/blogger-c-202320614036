@@ -1,0 +1,10 @@
+<body class="d-flex flex-column min-vh-100">
+ <%= render "shared/navbar" %>
+ <div class="container">
+ <div class="d-flex">
+ <%= render "shared/sidebar" %>
+ <%= yield %>
+ </div>
+ </div>
+ <%= render "shared/footer" %>
+</body>

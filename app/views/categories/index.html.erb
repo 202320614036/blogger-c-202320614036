@@ -1,0 +1,35 @@
+<% content_for :title, "Categories" %>
+
+<div class="container mt-5">
+  <h3 class="fw-bold">Kategoriler</h3>
+
+  <!-- 🟢 Tüm kategorileri üstte badge olarak göster -->
+  <div class="mb-4">
+    <% @categories.each do |category| %>
+      <%= link_to "#{category.name} (#{category.posts.count})", category_path(category),
+          class: "badge bg-dark text-white me-2 text-decoration-none" %>
+    <% end %>
+  </div>
+
+  <hr>
+
+  <!-- 📚 Her kategori altında ilişkili post başlıklarını göster -->
+  <% @categories.each do |category| %>
+    <% next if category.posts.empty? %>
+
+    <div class="mb-4">
+      <h5 class="text-muted fw-bold"><%= category.name %></h5>
+
+      <% category.posts.each do |post| %>
+        <div class="mb-2 ps-3 border-start border-3 border-secondary">
+          <%= link_to post.title, post_path(post), class: "h6 d-block text-success text-decoration-none mb-1" %>
+          <small class="text-muted"><%= post.created_at.strftime("%d %b %Y") %></small>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="mt-4">
+    <%= link_to "Yeni Kategori Ekle", new_category_path, class: "btn btn-primary" %>
+  </div>
+</div>

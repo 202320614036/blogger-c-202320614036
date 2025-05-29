@@ -1,0 +1,6 @@
+tr:
+  categories:
+    edit:
+      title: Kategori Güncelle
+    new:
+      title: Yeni Kategori

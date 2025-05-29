@@ -1,0 +1,19 @@
+en:
+  activerecord:
+    models:
+      post:
+        one: Post
+        other: Posts
+    attributes:
+      post:
+        article: Post Article
+        category: Post Category
+        image: Post Image
+        status: Post Status
+        title: Post Title
+    enums:
+      post:
+        statuses:
+          active: Active
+          passive: Passive
+          will_be_updated: Will be Updated

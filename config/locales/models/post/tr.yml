@@ -1,0 +1,19 @@
+tr:
+  activerecord:
+    models:
+      post:
+        one: Blog Girdisi
+        other: Blog Girdileri
+    attributes:
+      post:
+        article: Post Metni
+        category: Kategori
+        image: Post Resmi
+        status: Post Yayın Durumu
+        title: Post Başlığı
+    enums:
+      post:
+        statuses:
+          active: Yayında
+          passive: Yayından Kaldırılmış
+          will_be_updated: Güncellenmesi Gerekiyor

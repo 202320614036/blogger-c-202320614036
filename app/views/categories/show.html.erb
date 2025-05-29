@@ -1,0 +1,26 @@
+<% content_for :title, @category.name %>
+
+<div class="container mt-5">
+  <h3 class="fw-bold"><%= @category.name %></h3>
+
+  <!-- 🟢 Kategoriye ait gönderiler -->
+  <% if @posts.any? %>
+    <div class="mt-4">
+      <% @posts.each do |post| %>
+        <div class="mb-4 border-bottom pb-3">
+          <%= link_to post.title, post_path(post), class: "h5 d-block text-success text-decoration-none" %>
+          <small class="text-muted"><%= post.created_at.strftime("%d %b %Y") %></small>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p class="text-muted">Bu kategoriye ait henüz bir gönderi bulunmuyor.</p>
+  <% end %>
+
+  <!-- 🔧 Yönetim bağlantıları -->
+  <div class="mt-4">
+    <%= link_to "Edit this category", edit_category_path(@category), class: "btn btn-warning me-2" %>
+    <%= button_to "Destroy this category", @category, method: :delete, data: { confirm: "Silmek istediğine emin misin?" }, class: "btn btn-danger me-2" %>
+    <%= link_to "Back to categories", categories_path, class: "btn btn-secondary" %>
+  </div>
+</div>

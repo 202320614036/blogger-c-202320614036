@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-8 mx-auto mt-5">
+    <div class="card">
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Ad</th>
+              <th scope="col">Soyad</th>
+              <th scope="col">Kullanıcı Adı</th>
+              <th scope="col">E-posta</th>
+              <th scope="col">Cinsiyet</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td><%= @user.firstname %></td>
+                <td><%= @user.lastname %></td>
+                <td><%= @user.username %></td>
+                <td><%= @user.email %></td>
+                <td><%= t("activerecord.enums.user.genders.#{@user.gender}") %></td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card-footer">
+         <%= link_to t("actions.back"), admin_users_path, class: "btn btn-secondary me-1" %>
+      </div>
+    </div>
+  </div>
+</div>

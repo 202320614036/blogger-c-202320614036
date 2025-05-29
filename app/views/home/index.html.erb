@@ -1,0 +1,5 @@
+<%= image_tag("profile.jpg", class: "img-fluid", style: "width: 100%") %>
+<% path = user_signed_in? ? new_user_post_path(current_user) :
+new_user_session_path %>
+<%= link_to "Yazmaya Başla", path, class: "btn btn-secondary btn-lg
+position-absolute bottom-0 start-50 translate-middle-x mb-3" %>

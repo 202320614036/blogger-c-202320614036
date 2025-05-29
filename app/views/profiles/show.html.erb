@@ -1,0 +1,18 @@
+<% if @user.profile.present? %>
+  <div class="text-center mt-5">
+    <%= image_tag("profile.jpg", width:"200x200") %>
+    <h2 class="mt-3"><%= @user.fullname %></h2>
+  </div>
+  <div class="text-center mt-5"><%= @profile.bio %></div>
+  <p class="text-center mt-2">
+    <%= link_to "#" do %>
+      <i class="bi bi-github link-dark"></i>
+    <% end %>
+    <i class="bi bi-linkedin"></i>
+    <%= link_to "#" do %>
+      <i class="bi bi-twitter-x link-dark"></i>
+    <% end %>
+  </p>
+<% else %>
+  <h3 class="text-center my-5"> Profil bilgileri bulunmamaktadır! </h3>
+<% end %>

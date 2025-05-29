@@ -1,0 +1,19 @@
+ tr:
+  activerecord:
+    models:
+      user:
+        one: Kullanıcı
+        other: Kullanıcılar
+    attributes:
+      user:
+        email: E-posta
+        gender: Cinsiyet
+        firstname: Ad
+        lastname: Soyad
+        active: Aktiflik Durumu
+        password: Parola
+        password_confirmation: Parola Teyit
+        created_at: Oluşturulma Tarihi
+        updated_at: Güncellenme Tarihi
+        username: Kullanıcı Adı
+        remember_me: Beni Hatırla
